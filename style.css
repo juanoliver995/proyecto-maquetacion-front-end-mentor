@@ -26,7 +26,6 @@ body {
     font-family: var(--fuentePrincipal);
     background-color: var(--AlmostWhite);
     font-size: 18px;
-    height: 90vh;
 }
 
 .container {
@@ -46,6 +45,8 @@ body {
 
 .logo {
     margin-left: 2rem;
+    width: max-content;
+    margin-right: 4rem;
 }
 
 .container-nav-principal {
@@ -54,7 +55,6 @@ body {
     justify-content: space-between;
     align-items: center;
     font-size: 1.2rem;
-    margin-left: 4rem;
 }
 
 .nav-principal {
@@ -69,12 +69,18 @@ body {
     padding: 0;
 }
 
+.nav-principal ul .nav-principal-flex {
+    display: flex;
+    flex-direction: row;
+}
+
 .nav-principal ul li {
     list-style: none;
     text-decoration: none;
     color: var(--MediumGray);
     margin-left: 3rem;
     cursor: pointer;
+    display: flex;
 }
 
 .nav-principal ul li a {
@@ -204,6 +210,7 @@ body {
     margin: 3rem auto 3rem auto;
     display: grid;
     grid-template-columns: 50% 50%;
+    grid-column-gap: 8rem;
 }
 
 .main-info {
@@ -212,28 +219,32 @@ body {
 }
 
 .main-info h1 {
-    font-size: 7.5rem;
+    font-size: 7rem;
     font-weight: 700;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     margin-top: 10rem;
     color: var(--AlmostBlack);
 }
 
 .main-info-parrafo {
     color: var(--MediumGray);
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     font-size: 1.5rem;
-    width: 70%;
     line-height: 2.5rem;
     font-weight: 500;
 }
 
-.main-image img {
+.main-image {
+    width: 100%;
+    margin-top: 1rem
+}
+
+.hero-desktop {
     width: 75%;
     height: 500px;
-    margin-left: 10rem;
-    margin-top: 1rem;
+    margin: 0 auto;
 }
+
 
 .main-info button {
     background-color: var(--AlmostBlack);
@@ -241,7 +252,7 @@ body {
     border-radius: 10px;
     color: var(--AlmostWhite);
     border: 1px solid var(--AlmostBlack);
-    width: 25%;
+    width: 120px;
     cursor: pointer;
     font-weight: 700;
 }
@@ -252,7 +263,7 @@ body {
 }
 
 .logos {
-    margin-top: 5rem;
+    margin-top: 4.5rem;
     display: flex;
     align-items: center;
 }
@@ -263,6 +274,174 @@ body {
 
 .rotate {
     transform: rotate(180deg);
+}
+
+.menu-mobile-close {
+    display: none;
+}
+
+.menu-mobile {
+    display: none;
+}
+
+@media (max-width: 375px) {
+    .container-nav-principal {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--AlmostWhite);
+        text-align: left;
+        position: absolute;
+        width: 60%;
+        top: 0;
+        right: 0;
+        height: 100%;
+        display: none;
+        position: fixed;
+    }
+
+    .nav-principal ul li {
+        margin: 0 0 2rem 0;
+        font-size: 2rem;
+        text-align: left;
+
+    }
+
+    .nav-principal {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-principal ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 2rem;
+
+    }
+
+    .nav-principal ul .nav-principal-flex {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container-nav-mobile {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .container-main {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        width: 100%;
+    }
+
+    .container-login ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu-mobile-close {
+        display: block;
+        margin-top: 2rem;
+        margin-left: 12rem;
+        margin-bottom: 2rem;
+    }
+
+    .container-features {
+        background-color: transparent;
+        box-shadow: none;
+        border: none;
+        left: 15px;
+        position: relative;
+    }
+
+    .container-company {
+        background-color: transparent;
+        box-shadow: none;
+        border: none;
+        left: 15px;
+        position: relative;
+    }
+
+    .nav-principal ul li {
+        display: block;
+    }
+
+    .container-features ul {
+        padding: 0;
+        margin-top: 1rem;
+    }
+
+    .container-company ul {
+        padding: 0;
+        margin-top: 1rem;
+    }
+
+    .container-login {
+        margin-bottom: 2rem;
+        width: 100%;
+    }
+
+    .container-login ul li {
+        margin: 0 0 1rem 0;
+        font-size: 1.5rem;
+    }
+
+    .register {
+        width: 70%;
+        padding: 1rem 3rem;
+        text-align: center;
+
+    }
+
+    .menu-mobile {
+        display: block;
+        margin-right: 2rem;
+
+    }
+
+    .main-info {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main-info h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        margin-top: 5rem;
+    }
+
+    .logos {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: .3rem;
+        align-items: center;
+    }
+
+    .logos svg {
+        margin: 0;
+        width: 100%;
+        margin: .2rem;
+    }
+
+    .hero-desktop {
+        display: none;
+    }
+
+    .hero-mobile {
+        display: block;
+        width: 100%;
+    }
 }
 
 .active {
